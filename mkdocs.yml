@@ -1,7 +1,11 @@
 site_name: My Docs
 
+site_url: https://huliux.github.io/wenwengu-mkdocs/
+use_directory_urls: false
+
+
 nav:
-- Home: index.md
+- Home: 01_project_overview/README.md
 - 01_project_overview:
     - project_analysis_report: 01_project_overview/project_analysis_report.md
     - project_status_2025_09_latest: 01_project_overview/project_status_2025_09_latest.md

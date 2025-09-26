@@ -1,0 +1,765 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://huliux.github.io/wenwengu-mkdocs/02_architecture/dcf_architecture.html">
+      
+      
+        <link rel="prev" href="../01_project_overview/project_status_2025_09_latest.html">
+      
+      
+        <link rel="next" href="hybrid_architecture_design.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>dcf_architecture - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dcf" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              dcf_architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_project_overview/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    01_project_overview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            01_project_overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_project_overview/project_analysis_report.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    project_analysis_report
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_project_overview/project_status_2025_09_latest.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    project_status_2025_09_latest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    02_architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            02_architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    dcf_architecture
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="dcf_architecture.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    dcf_architecture
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总体架构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wacc" class="md-nav__link">
+    <span class="md-ellipsis">
+      WACC 计算子流程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键模块职责与输入/输出
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境变量与默认
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要数据流与产出
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考代码位置
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hybrid_architecture_design.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    hybrid_architecture_design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总体架构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wacc" class="md-nav__link">
+    <span class="md-ellipsis">
+      WACC 计算子流程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键模块职责与输入/输出
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境变量与默认
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要数据流与产出
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考代码位置
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dcf">DCF 核心业务逻辑与架构</h1>
+<p>本文档概述本项目中 DCF 估值的核心业务流程、关键模块与数据流，并给出整体与子模块的架构图（Mermaid）。</p>
+<h2 id="_1">总体架构</h2>
+<pre><code class="language-mermaid">flowchart TD
+    %% API 层与服务编排
+    A[API 请求\n`src/api/main.py`\n`StockValuationRequest`] --&gt; B[DataProcessor\n清洗/比率/最新指标\n`src/core/financial/processor.py`]
+    A --&gt;|估值参数| S[ValuationService\n编排 DCF 步骤\n`src/services/valuation_service.py`]
+
+    %% 数据准备
+    B --&gt;|historical_ratios\nlatest_metrics\nlatest_balance_sheet| S
+
+    %% 预测与UFCF
+    S --&gt; C[FinancialForecaster\n生成逐年预测DF\n`src/core/financial/forecaster.py`]
+    C --&gt;|DataFrame: year, revenue, ebit, nopat, d_a, capex, NWC项, delta_nwc, ebitda, ufcf| S
+
+    %% 资本成本
+    S --&gt; D[WaccCalculator\n计算 WACC/Ke\n`src/core/calculators/dcf/wacc_calculator.py`]
+    D --&gt;|wacc, ke| S
+
+    %% 终值计算
+    S --&gt; E[TerminalValueCalculator\n终值: 退出乘数/永续增长\n`src/core/calculators/dcf/terminal_value_calculator.py`]
+    E --&gt;|terminal_value| S
+
+    %% 现值折现
+    S --&gt; F[PresentValueCalculator\n折现UFCF与TV\n`src/core/calculators/dcf/present_value_calculator.py`]
+    F --&gt;|pv_ufcf, pv_tv| S
+
+    %% 股权桥梁
+    S --&gt; G[EquityBridgeCalculator\nEV-&gt;Equity-&gt;VPS\n`src/core/calculators/equity_bridge_calculator.py`]
+    G --&gt;|net_debt, equity_value, value_per_share| S
+
+    %% 输出
+    S --&gt; H[DcfForecastDetails\n`src/api/models.py`]
+    H --&gt; R[API 响应/前端]
+</code></pre>
+<h2 id="wacc">WACC 计算子流程</h2>
+<pre><code class="language-mermaid">flowchart LR
+    subgraph Inputs
+    P1[参数: risk_free_rate, beta, market_risk_premium, size_premium, country_risk_premium, industry_risk_premium, cost_of_debt, tax_rate]
+    P2[权重模式: target 或 market]
+    P3[目标债务比例 target_debt_ratio]
+    P4[最新市值 market_cap &amp; 资产负债表]
+    end
+
+    P1 --&gt; W{WaccCalculator}
+    P2 --&gt; W
+    P3 --&gt; W
+    P4 --&gt;|market 模式\n债务市值近似账面| W
+
+    W --&gt;|Ke = Rf + β*(MRP+CRP) + Size + Industry| Ke[Ke]
+    W --&gt;|Kd(AT) = Kd*(1-T)| Kd[税后债务成本]
+    W --&gt;|权重: target 或 market| WT[Equity/ Debt 比例]
+    Ke --&gt; X[WACC = E*Ke + D*Kd(AT)]
+    Kd --&gt; X
+    WT --&gt; X
+</code></pre>
+<h2 id="_2">关键模块职责与输入/输出</h2>
+<ul>
+<li><code>DataProcessor</code>（数据准备）</li>
+<li>输入：原始三大报表、基本信息、PE/PB、股息、价格等</li>
+<li>输出：<code>processed_data</code>（清洗后的报表）、<code>historical_ratios</code>（中位数/天数）、<code>latest_metrics</code>、<code>latest_balance_sheet</code></li>
+<li><code>FinancialForecaster</code>（财务预测）</li>
+<li>输入：上一年度收入、历史比率、预测假设（利润率/各项比率与天数/过渡年数等）</li>
+<li>输出：含逐年 <code>year, revenue, ebit, nopat, d_a, capex, NWC 分项, delta_nwc, ebitda, ufcf</code> 的 DataFrame</li>
+<li><code>FcfCalculator</code>（UFCF）</li>
+<li>公式：<code>ufcf = nopat + d_a - capex - delta_nwc</code></li>
+<li>就地回填 <code>ufcf</code> 列（Decimal 计算，异常/NaN 防护）</li>
+<li><code>WaccCalculator</code>（WACC/Ke）</li>
+<li>Ke（增强 CAPM）：<code>Ke = Rf + β*(MRP + CRP) + Size + Industry</code></li>
+<li>债务成本税后：<code>Kd(AT) = Kd*(1 - Tax)</code></li>
+<li>权重：<code>target</code>（<code>target_debt_ratio</code>）或 <code>market</code>（以市值/账面债务近似求权重）</li>
+<li>返回：<code>(wacc, ke)</code>；含大量类型/范围校验与回退</li>
+<li><code>TerminalValueCalculator</code>（终值）</li>
+<li>Exit Multiple：<code>TV = EBITDA_T * ExitMultiple</code></li>
+<li>Perpetual Growth：若启用 GDP 上限，<code>g = min(g_input, GDP_CAP)</code>；要求 <code>g &lt; wacc</code><ul>
+<li>公式：<code>TV = UFCF_T * (1 + g) / (wacc - g)</code></li>
+</ul>
+</li>
+<li><code>PresentValueCalculator</code>（现值折现）</li>
+<li>年中折现可选：指数 <code>t-0.5</code></li>
+<li>输出：<code>pv_ufcf</code> 与 <code>pv_tv</code>（Decimal 逐期折现并汇总）</li>
+<li><code>EquityBridgeCalculator</code>（股权桥）</li>
+<li><code>NetDebt = (LT/ST 借款 + 债券 + 一年内到期非流动负债) - 货币资金</code></li>
+<li><code>EquityValue = EV - NetDebt - MinorityInterest - PreferredEquity</code></li>
+<li><code>Value/Share = EquityValue / TotalShares</code></li>
+<li><code>ValuationService</code>（编排与防护）</li>
+<li>顺序：预测 -&gt; WACC -&gt; 终值 -&gt; 现值 -&gt; 股权桥 -&gt; 汇总 <code>DcfForecastDetails</code></li>
+<li>逻辑：API 假设键映射、市场权重失败回退目标权重、默认 ExitMultiple/PGR、<code>g&lt;w</code> 守护、调试快照、敏感性分析</li>
+</ul>
+<h2 id="_3">环境变量与默认</h2>
+<ul>
+<li><code>WaccCalculator</code>：<code>DEFAULT_BETA</code>, <code>RISK_FREE_RATE</code>, <code>MARKET_RISK_PREMIUM</code>, <code>COUNTRY_RISK_PREMIUM</code>, <code>INDUSTRY_RISK_PREMIUM</code>, <code>DEFAULT_COST_OF_DEBT</code>, <code>DEFAULT_TARGET_TAX_RATE</code>, <code>DEFAULT_SIZE_PREMIUM</code>, <code>TARGET_DEBT_RATIO</code></li>
+<li><code>TerminalValueCalculator</code>：<code>USE_GDP_CAP</code>（默认为 true），<code>GDP_NOMINAL_CAP</code>（默认 0.05）</li>
+<li><code>ValuationService</code>：<code>DEFAULT_EXIT_MULTIPLE</code>（默认 8.0），<code>DEFAULT_PERPETUAL_GROWTH_RATE</code>（默认 0.025）</li>
+</ul>
+<h2 id="_4">主要数据流与产出</h2>
+<ol>
+<li>DataProcessor 清洗数据、计算历史中位数/天数与最新指标</li>
+<li>FinancialForecaster 基于历史与假设生成逐年预测，<code>FcfCalculator</code> 填充 <code>ufcf</code></li>
+<li>WaccCalculator 计算 <code>wacc, ke</code>（支持 market/target 权重）</li>
+<li>TerminalValueCalculator 计算终值（Exit Multiple 或 Perpetual Growth，含 GDP 上限与 <code>g&lt;w</code> 校验）</li>
+<li>PresentValueCalculator 将 UFCF 与 TV 折现为现值（可年中折现）</li>
+<li>EquityBridgeCalculator 计算净债务、股权价值、每股价值</li>
+<li>汇总为 <code>DcfForecastDetails</code> 返回 API/前端</li>
+</ol>
+<h2 id="_5">参考代码位置</h2>
+<ul>
+<li>Valuation 编排：<code>src/services/valuation_service.py</code></li>
+<li>WACC/终值/现值/UFCF/股权桥：</li>
+<li><code>src/core/calculators/dcf/wacc_calculator.py</code></li>
+<li><code>src/core/calculators/dcf/terminal_value_calculator.py</code></li>
+<li><code>src/core/calculators/dcf/present_value_calculator.py</code></li>
+<li><code>src/core/calculators/dcf/fcf_calculator.py</code></li>
+<li><code>src/core/calculators/equity_bridge_calculator.py</code></li>
+<li>预测器/数据处理：</li>
+<li><code>src/core/financial/forecaster.py</code></li>
+<li><code>src/core/financial/processor.py</code></li>
+<li>DCF 结果模型：<code>src/api/models.py</code>
+```</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

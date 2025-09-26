@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://huliux.github.io/wenwengu-mkdocs/01_project_overview/index.html</loc>
+         <lastmod>2025-09-26</lastmod>
+    </url>
+    <url>
+         <loc>https://huliux.github.io/wenwengu-mkdocs/01_project_overview/project_analysis_report.html</loc>
+         <lastmod>2025-09-26</lastmod>
+    </url>
+    <url>
+         <loc>https://huliux.github.io/wenwengu-mkdocs/01_project_overview/project_status_2025_09_latest.html</loc>
+         <lastmod>2025-09-26</lastmod>
+    </url>
+    <url>
+         <loc>https://huliux.github.io/wenwengu-mkdocs/02_architecture/index.html</loc>
+         <lastmod>2025-09-26</lastmod>
+    </url>
+    <url>
+         <loc>https://huliux.github.io/wenwengu-mkdocs/02_architecture/dcf_architecture.html</loc>
+         <lastmod>2025-09-26</lastmod>
+    </url>
+    <url>
+         <loc>https://huliux.github.io/wenwengu-mkdocs/02_architecture/hybrid_architecture_design.html</loc>
+         <lastmod>2025-09-26</lastmod>
+    </url>
+</urlset>
