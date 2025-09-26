@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>项目目录结构优化方案 - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">01 project overview</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_project_overview/" class="dropdown-item">项目概览文档</a>
+</li>
+                                    
+<li>
+    <a href="../../01_project_overview/project_analysis_report/" class="dropdown-item">股票估值系统项目分析报告</a>
+</li>
+                                    
+<li>
+    <a href="../../01_project_overview/project_status_2025_09_latest/" class="dropdown-item">股票估值系统项目状态报告</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">02 architecture</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../02_architecture/" class="dropdown-item">架构设计文档</a>
+</li>
+                                    
+<li>
+    <a href="../../02_architecture/dcf_architecture/" class="dropdown-item">DCF 核心业务逻辑与架构</a>
+</li>
+                                    
+<li>
+    <a href="../../02_architecture/hybrid_architecture_design/" class="dropdown-item">股票估值系统混合架构设计文档</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">03 development</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../03_development/" class="dropdown-item">开发文档</a>
+</li>
+                                    
+<li>
+    <a href="../../03_development/development_guide_2025_09/" class="dropdown-item">股票估值系统开发指南</a>
+</li>
+                                    
+<li>
+    <a href="../../03_development/testing_strategy_2025_09/" class="dropdown-item">测试策略与质量保障指南</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">04 deployment</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../04_deployment/" class="dropdown-item">部署运维文档</a>
+</li>
+                                    
+<li>
+    <a href="../../04_deployment/deployment_operations_guide_2025_09/" class="dropdown-item">部署运维指南</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">05 data sources</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../05_data_sources/" class="dropdown-item">数据源专题文档</a>
+</li>
+                                    
+<li>
+    <a href="../../05_data_sources/tushare_alignment/" class="dropdown-item">TuShare数据源对齐与生产部署报告</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Archived</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">归档文档</a>
+</li>
+                                    
+<li>
+    <a href="../Stock_investment_decision_making_process/" class="dropdown-item">Stock investment decision making process</a>
+</li>
+                                    
+<li>
+    <a href="../api_backend_comprehensive_analysis/" class="dropdown-item">Stock Valuation API 后端接口详细分析文档</a>
+</li>
+                                    
+<li>
+    <a href="../dcf_industry_standards_comprehensive_analysis/" class="dropdown-item">DCF估值项目与行业标准深度对比分析报告</a>
+</li>
+                                    
+<li>
+    <a href="../dcf_optimization_plan/" class="dropdown-item">DCF 核心业务逻辑优化方案（v1）</a>
+</li>
+                                    
+<li>
+    <a href="../dcf_rolling_revaluation_guide/" class="dropdown-item">DCF 滚动重评实践指南（季度/中报更新版）</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">项目目录结构优化方案</a>
+</li>
+                                    
+<li>
+    <a href="../mckinsey_financial_ratios_and_forecasting_analysis/" class="dropdown-item">Stock Vale Valuation 3.0 财务比率与预测逻辑 McKinsey 标准合规性专题分析报告</a>
+</li>
+                                    
+<li>
+    <a href="../mckinsey_standards_compliance_report/" class="dropdown-item">Stock Vale Valuation 3.0 项目 McKinsey 标准合规性分析报告</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../dcf_rolling_revaluation_guide/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../mckinsey_financial_ratios_and_forecasting_analysis/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">项目目录结构优化方案</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">当前目录结构问题分析</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">优化目标</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">优化方案</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_14" class="nav-link">实施时间表</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_15" class="nav-link">风险评估</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">项目目录结构优化方案</h1>
+<h2 id="_2">当前目录结构问题分析</h2>
+<h3 id="1">1. 根目录文件过多且散乱</h3>
+<p><strong>问题描述</strong>:
+- 根目录下有8个计算器文件直接散落
+- 缺乏清晰的模块分层和组织
+- 文件命名不够规范统一</p>
+<p><strong>当前散乱文件</strong>:</p>
+<pre><code>├── equity_bridge_calculator.py
+├── fcf_calculator.py
+├── nwc_calculator.py
+├── present_value_calculator.py
+├── terminal_value_calculator.py
+├── wacc_calculator.py
+├── data_fetcher.py
+├── data_processor.py
+├── financial_forecaster.py
+├── stock_screener_app.py
+├── stock_screener_data.py
+├── streamlit_app.py
+├── st_utils.py
+├── tushare_screener_poc.py
+</code></pre>
+<h3 id="2">2. 缺乏清晰的业务模块划分</h3>
+<p><strong>问题</strong>:
+- 估值计算、数据处理、界面展示混杂在根目录
+- 没有按照业务功能进行模块化组织
+- 难以维护和扩展</p>
+<h3 id="3">3. 混合架构准备不足</h3>
+<p><strong>问题</strong>:
+- <code>data_sources/</code> 目录结构已建立但空置
+- 缺乏与现有代码的整合规划
+- 新旧架构并存导致混乱</p>
+<h2 id="_3">优化目标</h2>
+<h3 id="1_1">1. 建立清晰的分层架构</h3>
+<ul>
+<li><strong>业务层</strong>: 估值计算、财务分析</li>
+<li><strong>服务层</strong>: 数据服务、缓存服务</li>
+<li><strong>数据层</strong>: 数据获取、数据处理</li>
+<li><strong>接口层</strong>: API接口、用户界面</li>
+</ul>
+<h3 id="2_1">2. 模块化组织</h3>
+<ul>
+<li>按功能域划分模块</li>
+<li>每个模块职责单一</li>
+<li>模块间依赖关系清晰</li>
+</ul>
+<h3 id="3_1">3. 为混合架构做准备</h3>
+<ul>
+<li>预留数据源扩展空间</li>
+<li>支持新旧架构平滑过渡</li>
+<li>便于后续重构和迁移</li>
+</ul>
+<h2 id="_4">优化方案</h2>
+<h3 id="_5">新目录结构设计</h3>
+<pre><code>stock_vale_valuation_3.0/
+├── README.md
+├── pyproject.toml
+├── Dockerfile
+├── supervisord.conf
+├── .env.example
+├── .gitignore
+├── .pre-commit-config.yaml
+├── .clineignore
+│
+├── .trae/                          # IDE配置
+│   └── rules/
+│
+├── config/                         # 配置文件
+│   └── llm_prompt_template.md
+│
+├── src/                           # 源代码主目录
+│   ├── __init__.py
+│   │
+│   ├── core/                      # 核心业务逻辑
+│   │   ├── __init__.py
+│   │   ├── calculators/           # 估值计算器模块
+│   │   │   ├── __init__.py
+│   │   │   ├── base.py           # 计算器基类
+│   │   │   ├── dcf/              # DCF估值相关
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── fcf_calculator.py
+│   │   │   │   ├── terminal_value_calculator.py
+│   │   │   │   ├── present_value_calculator.py
+│   │   │   │   └── wacc_calculator.py
+│   │   │   ├── equity_bridge_calculator.py
+│   │   │   └── nwc_calculator.py
+│   │   │
+│   │   ├── financial/             # 财务分析模块
+│   │   │   ├── __init__.py
+│   │   │   ├── forecaster.py     # 重命名自financial_forecaster.py
+│   │   │   └── processor.py      # 重命名自data_processor.py
+│   │   │
+│   │   └── screener/              # 股票筛选模块
+│   │       ├── __init__.py
+│   │       ├── engine.py         # 重命名自stock_screener_app.py
+│   │       └── data_handler.py   # 重命名自stock_screener_data.py
+│   │
+│   ├── data/                      # 数据层
+│   │   ├── __init__.py
+│   │   ├── fetchers/              # 数据获取器
+│   │   │   ├── __init__.py
+│   │   │   ├── base.py           # 数据获取器基类
+│   │   │   ├── tushare_fetcher.py
+│   │   │   └── postgresql_fetcher.py
+│   │   │
+│   │   ├── processors/            # 数据处理器
+│   │   │   ├── __init__.py
+│   │   │   └── base_processor.py
+│   │   │
+│   │   └── cache/                 # 缓存管理
+│   │       ├── __init__.py
+│   │       ├── redis_cache.py
+│   │       └── local_cache.py
+│   │
+│   ├── services/                  # 服务层
+│   │   ├── __init__.py
+│   │   ├── data_source_manager.py # 数据源管理器
+│   │   ├── valuation_service.py   # 估值服务
+│   │   └── health_checker.py      # 健康检查服务
+│   │
+│   └── utils/                     # 工具模块
+│       ├── __init__.py
+│       ├── streamlit_utils.py     # 重命名自st_utils.py
+│       └── common.py              # 通用工具函数
+│
+├── api/                           # API接口层
+│   ├── __init__.py
+│   ├── main.py
+│   ├── models.py
+│   ├── sensitivity_models.py
+│   ├── utils.py
+│   └── llm_utils.py
+│
+├── apps/                          # 应用程序
+│   ├── __init__.py
+│   ├── streamlit_app.py          # 主Streamlit应用
+│   └── poc/                      # 概念验证应用
+│       ├── __init__.py
+│       └── tushare_screener_poc.py
+│
+├── data_sources/                  # 混合架构数据源(保留)
+│   ├── cache/
+│   ├── fetchers/
+│   ├── health/
+│   └── managers/
+│
+├── tests/                         # 测试目录
+│   ├── __init__.py
+│   ├── unit/                     # 单元测试
+│   │   ├── core/
+│   │   ├── data/
+│   │   └── services/
+│   ├── integration/              # 集成测试
+│   └── api/                      # API测试
+│
+├── dev_docs/                      # 开发文档
+├── memory-bank/                   # 记忆库
+└── wiki/                          # 项目文档
+</code></pre>
+<h3 id="_6">重构步骤</h3>
+<h4 id="_7">第一阶段: 创建新目录结构</h4>
+<ol>
+<li>
+<p><strong>创建src主目录和子模块</strong>
+   <code>bash
+   mkdir -p src/{core/{calculators/{dcf},financial,screener},data/{fetchers,processors,cache},services,utils}
+   mkdir -p apps/poc
+   mkdir -p tests/{unit/{core,data,services},integration}</code></p>
+</li>
+<li>
+<p><strong>创建__init__.py文件</strong></p>
+</li>
+<li>为所有Python包目录添加__init__.py</li>
+<li>定义模块导出接口</li>
+</ol>
+<h4 id="_8">第二阶段: 移动和重命名文件</h4>
+<ol>
+<li><strong>移动计算器文件到core/calculators/</strong>
+   ```bash
+   # DCF相关计算器
+   mv fcf_calculator.py src/core/calculators/dcf/
+   mv terminal_value_calculator.py src/core/calculators/dcf/
+   mv present_value_calculator.py src/core/calculators/dcf/
+   mv wacc_calculator.py src/core/calculators/dcf/</li>
+</ol>
+<p># 其他计算器
+   mv equity_bridge_calculator.py src/core/calculators/
+   mv nwc_calculator.py src/core/calculators/
+   ```</p>
+<ol>
+<li>
+<p><strong>移动财务分析文件</strong>
+   <code>bash
+   mv financial_forecaster.py src/core/financial/forecaster.py
+   mv data_processor.py src/core/financial/processor.py</code></p>
+</li>
+<li>
+<p><strong>移动筛选器文件</strong>
+   <code>bash
+   mv stock_screener_app.py src/core/screener/engine.py
+   mv stock_screener_data.py src/core/screener/data_handler.py</code></p>
+</li>
+<li>
+<p><strong>移动应用程序文件</strong>
+   <code>bash
+   mv streamlit_app.py apps/
+   mv tushare_screener_poc.py apps/poc/</code></p>
+</li>
+<li>
+<p><strong>移动工具文件</strong>
+   <code>bash
+   mv st_utils.py src/utils/streamlit_utils.py
+   mv data_fetcher.py src/data/fetchers/base_fetcher.py</code></p>
+</li>
+</ol>
+<h4 id="_9">第三阶段: 更新导入路径</h4>
+<ol>
+<li><strong>更新所有文件的import语句</strong></li>
+<li>使用相对导入或绝对导入</li>
+<li>
+<p>确保模块路径正确</p>
+</li>
+<li>
+<p><strong>更新测试文件导入</strong></p>
+</li>
+<li>修改测试文件中的导入路径</li>
+<li>
+<p>确保测试仍能正常运行</p>
+</li>
+<li>
+<p><strong>更新API和应用程序导入</strong></p>
+</li>
+<li>修改FastAPI路由导入</li>
+<li>修改Streamlit应用导入</li>
+</ol>
+<h4 id="_10">第四阶段: 创建模块接口</h4>
+<ol>
+<li><strong>定义__init__.py导出</strong>
+   ```python
+   # src/core/calculators/<strong>init</strong>.py
+   from .dcf.fcf_calculator import FCFCalculator
+   from .dcf.wacc_calculator import WACCCalculator
+   from .equity_bridge_calculator import EquityBridgeCalculator</li>
+</ol>
+<p><strong>all</strong> = ['FCFCalculator', 'WACCCalculator', 'EquityBridgeCalculator']
+   ```</p>
+<ol>
+<li><strong>创建基类和接口</strong>
+   ```python
+   # src/core/calculators/base.py
+   from abc import ABC, abstractmethod</li>
+</ol>
+<p>class BaseCalculator(ABC):
+       """计算器基类"""</p>
+<pre><code>   @abstractmethod
+   def calculate(self, *args, **kwargs):
+       """执行计算"""
+       pass
+</code></pre>
+<p>```</p>
+<h4 id="_11">第五阶段: 验证和测试</h4>
+<ol>
+<li>
+<p><strong>运行所有测试</strong>
+   <code>bash
+   python -m pytest tests/ -v</code></p>
+</li>
+<li>
+<p><strong>验证应用程序启动</strong>
+   ```bash
+   # 验证API服务
+   uvicorn api.main:app --reload</p>
+</li>
+</ol>
+<p># 验证Streamlit应用
+   streamlit run apps/streamlit_app.py
+   ```</p>
+<ol>
+<li><strong>检查代码质量</strong>
+   <code>bash
+   ruff check src/
+   black --check src/</code></li>
+</ol>
+<h3 id="_12">迁移注意事项</h3>
+<h4 id="1_2">1. 保持向后兼容</h4>
+<ul>
+<li>在根目录保留符号链接或导入别名</li>
+<li>逐步迁移，避免一次性大改动</li>
+<li>确保现有功能不受影响</li>
+</ul>
+<h4 id="2_2">2. 更新配置文件</h4>
+<ul>
+<li>修改pyproject.toml中的包路径</li>
+<li>更新测试配置</li>
+<li>调整代码质量检查路径</li>
+</ul>
+<h4 id="3_2">3. 文档更新</h4>
+<ul>
+<li>更新README.md中的项目结构说明</li>
+<li>修改开发文档中的路径引用</li>
+<li>更新API文档</li>
+</ul>
+<h3 id="_13">预期收益</h3>
+<h4 id="1_3">1. 代码组织更清晰</h4>
+<ul>
+<li>按功能域划分，职责明确</li>
+<li>降低模块间耦合度</li>
+<li>提高代码可维护性</li>
+</ul>
+<h4 id="2_3">2. 扩展性更好</h4>
+<ul>
+<li>为混合架构预留空间</li>
+<li>支持新功能模块添加</li>
+<li>便于团队协作开发</li>
+</ul>
+<h4 id="3_3">3. 质量提升</h4>
+<ul>
+<li>更容易进行单元测试</li>
+<li>代码复用性提高</li>
+<li>降低重构风险</li>
+</ul>
+<h2 id="_14">实施时间表</h2>
+<ul>
+<li><strong>第一阶段</strong>: 1天 - 创建目录结构</li>
+<li><strong>第二阶段</strong>: 2天 - 移动和重命名文件</li>
+<li><strong>第三阶段</strong>: 2天 - 更新导入路径</li>
+<li><strong>第四阶段</strong>: 1天 - 创建模块接口</li>
+<li><strong>第五阶段</strong>: 1天 - 验证和测试</li>
+</ul>
+<p><strong>总计</strong>: 7个工作日</p>
+<h2 id="_15">风险评估</h2>
+<h3 id="_16">高风险</h3>
+<ul>
+<li>导入路径更新可能遗漏</li>
+<li>测试用例可能失败</li>
+<li>现有功能可能受影响</li>
+</ul>
+<h3 id="_17">缓解措施</h3>
+<ul>
+<li>分阶段实施，每阶段验证</li>
+<li>保持完整的测试覆盖</li>
+<li>建立回滚机制</li>
+<li>充分的代码审查</li>
+</ul>
+<hr />
+<p><em>文档创建时间: 2025年1月</em><br />
+<em>最后更新: 2025年1月</em></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
