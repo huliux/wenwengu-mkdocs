@@ -1,4 +1,13 @@
 site_name: My Docs
 
+nav:
+- Home: index.md
+- 01_project_overview:
+    - project_analysis_report: 01_project_overview/project_analysis_report.md
+    - project_status_2025_09_latest: 01_project_overview/project_status_2025_09_latest.md
+- 02_architecture:
+    - dcf_architecture: 02_architecture/dcf_architecture.md
+    - hybrid_architecture_design: 02_architecture/hybrid_architecture_design.md
+
 theme:
   name: material
